@@ -1,0 +1,81 @@
+<mat-card *ngIf="!editableMode;else editableForm">
+  <mat-card-header class="d-flex justify-content-between">
+    <mat-card-title>{{event.title}}</mat-card-title>
+    <button mat-mini-fab color="primary" class="close-icon" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-card-subtitle>
+      <pre>{{event.notes}}</pre>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions class="d-flex justify-content-between">
+    <button mat-button (click)="markEvent.emit(event)">MARCAR</button>
+    <button mat-button mat-dialog-close (click)="resetTime()">
+      REINICIAR TIEMPO
+    </button>
+    <button mat-button color="accent" (click)="editEvent()">EDITAR</button>
+    <button mat-button mat-dialog-close color="warn" (click)="removeEvent()">
+      ELIMINAR
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #editableForm>
+  <div mat-dialog-content class="container text-center">
+    <div class="row mt-3">
+      <mat-button-toggle-group class="col toggle-color" name="fontStyle">
+        <mat-button-toggle
+          *ngFor="let item of colors"
+          [ngClass]="{'selected-color' : item.selected}"
+          [ngClass]="{'hidden-color-list' : hideColors && !item.selected}"
+          [style.background-color]="item['primary']"
+          (click)="getColor(item.id)"
+          [value]="item.id"
+        >
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <form [formGroup]="editEventForm">
+      <div class="row">
+        <div class="col">
+          <label for="name" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+            placeholder="Nombre"
+          />
+        </div>
+        <div class="col">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+            id="lastName"
+            placeholder="Apellido"
+          />
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <mat-form-field for="note" class="form-label">
+          <mat-label>Nota</mat-label>
+          <textarea
+            class="form-control"
+            id="note"
+            formControlName="note"
+            matInput
+            placeholder="Comentario"
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions class="d-flex justify-content-between">
+    <button mat-button mat-dialog-close>Cerrar</button>
+
+    <button mat-button mat-dialog-close (click)="submitForm()">Aceptar</button>
+  </div>
+</ng-template>

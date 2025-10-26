@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../app/server/database/generated/client" //release
+  output   = "../dist/app/server/database/generated/client" //local
+  engineType = "library"
+   binaryTargets = ["native", "windows", "darwin-arm64"]
+  // output = "../release/app/node_modules/@prisma/client"
+}
+
+
+datasource db {
+  provider = "sqlite"
+  // url      = env("DATABASE_URL")
+  url      = "file:dev.db"
+}
+
+
+model Color {
+  id             Int      @id @default(autoincrement())
+  name           String
+  primary        String
+  secondary      String
+  secondaryText  String?
+  events         Event[]
+}
+model Section {
+  id             Int      @id @default(autoincrement())
+  name           String
+  order          Int?
+  events         Event[]
+}
+model Client {
+  id             Int      @id @default(autoincrement())
+  name           String
+  lastName       String
+  email          String?
+  phone          String?
+  notes          String?
+  events         Event[]
+}
+model Event {
+  id             Int      @id @default(autoincrement())
+  title          String
+  start          DateTime
+  end            DateTime?
+  color          Color    @relation(fields: [colorId], references: [id])
+  colorId        Int
+  section        Section  @relation(fields: [sectionId], references: [id])
+  sectionId      Int
+  client         Client   @relation(fields: [clientId], references: [id])
+  clientId       Int
+  notes          String?
+  draggable      Boolean
+  beforeStart    Boolean
+  afterEnd       Boolean
+  started        Boolean?
+
+}

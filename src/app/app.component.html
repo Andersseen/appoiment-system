@@ -1,0 +1,50 @@
+<mat-sidenav-container class="main-container">
+  <mat-sidenav #sidemenu [mode]="'side'">
+    <section class="p-3 mb-3 gap-3">
+      <h3 class="mb-3">Secciones</h3>
+      <div class="row">
+        <a
+          class="d-flex justify-content-start"
+          mat-button
+          color="primary"
+          routerLink="/calendar"
+          (click)="closeMenu()"
+        >
+          Calendario
+        </a>
+      </div>
+      <div class="row d-flex">
+        <a
+          class="d-flex justify-content-start"
+          mat-button
+          color="primary"
+          routerLink="/clients"
+          (click)="closeMenu()"
+        >
+          Clientes
+        </a>
+      </div>
+      <div class="row">
+        <a
+          class="d-flex justify-content-start"
+          mat-button
+          color="primary"
+          routerLink="/settings"
+          (click)="closeMenu()"
+        >
+          Configuración
+        </a>
+      </div>
+    </section>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header
+      (openSideMenu)="handleSideMenu()"
+      [(isOpenSideMenu)]="showCloseIcon"
+      [hideDateToggle]="hideDateToggle"
+    >
+    </app-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

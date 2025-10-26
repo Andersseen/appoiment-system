@@ -1,0 +1,99 @@
+<mat-toolbar color="primary" [formGroup]="templateForm">
+  <button mat-icon-button (click)="handleSideMenu()">
+    <ng-container *ngIf="isOpenSideMenu ;else closeIcon">
+      <mat-icon>
+        <span class="material-symbols-outlined"> close </span>
+      </mat-icon>
+    </ng-container>
+    <ng-template #closeIcon>
+      <mat-icon>
+        <span class="material-symbols-outlined"> menu </span>
+      </mat-icon>
+    </ng-template>
+  </button>
+
+  <ng-container [ngSwitch]="headerTitle">
+    <header *ngSwitchCase="'/clients'" class="row text-center container">
+      <div class="col-md-12">
+        <h2>Clientes</h2>
+      </div>
+    </header>
+    <header *ngSwitchCase="'/settings'" class="row text-center container">
+      <div class="col-md-12">
+        <h2>Configuración</h2>
+      </div>
+    </header>
+    <header *ngSwitchDefault class="row text-center container">
+      <div class="col-md-4">
+        <mat-button-toggle-group formControlName="date">
+          <mat-button-toggle
+            value="before"
+            mwlCalendarPreviousView
+            [view]="view"
+            [(viewDate)]="viewDate"
+            (click)="changeDateInCalendar(viewDate)"
+          >
+            Anterior
+          </mat-button-toggle>
+          <mat-button-toggle
+            value="today"
+            mwlCalendarToday
+            [(viewDate)]="viewDate"
+            (click)="changeDateInCalendar(viewDate)"
+          >
+            Ahora
+          </mat-button-toggle>
+          <mat-button-toggle
+            value="after"
+            mwlCalendarNextView
+            [view]="view"
+            [(viewDate)]="viewDate"
+            (click)="changeDateInCalendar(viewDate)"
+          >
+            Siguiente
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <div class="col-md-4">
+        <h3
+          *ngIf="view === 'day'; else titleBox"
+          style="text-transform: capitalize"
+        >
+          {{ titleDate }}
+        </h3>
+        <ng-template #titleBox>
+          <h3 style="text-transform: capitalize">
+            {{ viewDate | calendarDate : view + 'ViewTitle' : locale }}
+          </h3>
+        </ng-template>
+      </div>
+      <div class="col-md-4" [hidden]="hideDateToggle">
+        <mat-button-toggle-group formControlName="view">
+          <mat-button-toggle
+            value="month"
+            (click)="viewChangeInCalendar('month')"
+            [class.active]="view === 'month'"
+          >
+            Mes
+          </mat-button-toggle>
+          <mat-button-toggle
+            value="week"
+            (click)="viewChangeInCalendar('week')"
+            [class.active]="view === 'week'"
+          >
+            Semana
+          </mat-button-toggle>
+          <mat-button-toggle
+            value="day"
+            (click)="viewChangeInCalendar('day')"
+            [class.active]="view === 'day'"
+          >
+            Día
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </header>
+  </ng-container>
+
+  <ng-template #clientsBox> </ng-template>
+</mat-toolbar>

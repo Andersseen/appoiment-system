@@ -1,0 +1,9 @@
+<ng-container *ngIf="clients$ | async as clientes; else spinner">
+  <app-clients-table
+    [clients]="clientes"
+    (removeData)="removeData($event)"
+    (editData)="editData($event)"
+  >
+  </app-clients-table>
+</ng-container>
+<ng-template #spinner>Cargando...</ng-template>

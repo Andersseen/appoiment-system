@@ -1,0 +1,85 @@
+<div class="table-responsive">
+  <button mat-stroked-button color="primary" (click)="addSection()">
+    {{isNewSection ? 'Cerrar' : 'Añadir seccion'}}
+  </button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Orden</th>
+
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of sections$ | async">
+        <td>
+          <h6 *ngIf="!item.edit; else editNameBox">{{item.name}}</h6>
+          <ng-template #editNameBox>
+            <mat-form-field class="example-form-field">
+              <input matInput type="text" [(ngModel)]="item.name" />
+            </mat-form-field>
+          </ng-template>
+        </td>
+        <td>
+          <h6 *ngIf="!item.edit; else editOrderBox">{{item.order}}</h6>
+          <ng-template #editOrderBox>
+            <mat-form-field class="example-form-field">
+              <input matInput type="number" [(ngModel)]="item.order" />
+            </mat-form-field>
+          </ng-template>
+        </td>
+
+        <td class="d-flex gap-2">
+          <button
+            *ngIf="!item.edit; else editBtn"
+            mat-raised-button
+            color="accent"
+            (click)="item.edit = true"
+          >
+            Editar
+          </button>
+          <ng-template #editBtn>
+            <button mat-raised-button (click)="item.edit = false">
+              Volver
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="editSection(item)"
+            >
+              Aceptar
+            </button>
+          </ng-template>
+          <button mat-raised-button color="warn" (click)="removeSection(item)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="isNewSection" [formGroup]="sectionForm">
+        <td>
+          <mat-form-field class="example-form-field">
+            <input matInput type="text" formControlName="name" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-form-field">
+            <input matInput type="number" formControlName="order" />
+          </mat-form-field>
+        </td>
+
+        <td>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="acceptNewSection()"
+          >
+            Aceptar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

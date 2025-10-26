@@ -1,0 +1,22 @@
+/* angular-cli file: src/styles.css */
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import "../node_modules/@perfectmemory/ngx-contextmenu/src/assets/stylesheets/base";
+@import "bootstrap/scss/bootstrap";
+@import "@angular/cdk/overlay-prebuilt.css";
+@import "flatpickr/dist/flatpickr.css";
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cal-event-title {
+  font-size: 1.2rem;
+  // color: #000;
+}

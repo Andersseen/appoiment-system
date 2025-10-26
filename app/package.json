@@ -1,0 +1,18 @@
+{
+  "name": "appoiment-system",
+  "description": "Appoiment SystemAngular Electron sample",
+  "author": {
+    "name": "Andersseen"
+  },
+  "version": "0.0.1",
+  "main": "main.js",
+  "private": true,
+  "dependencies": {
+    "express": "4.18.2",
+    "cors": "2.8.5",
+    "@prisma/client": "5.7.1",
+    "@upstash/redis": "1.4.0",
+    "dotenv": "16.4.5",
+    "ioredis": "5.3.2"
+  }
+}

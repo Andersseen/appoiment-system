@@ -1,0 +1,109 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{client.name}} {{client.lastName}}</mat-card-title>
+
+    <mat-card-subtitle>
+      <button
+        *ngIf="!events; else backBox"
+        mat-button
+        color="primary"
+        (click)="showEventsOfClient()"
+      >
+        Ver citas
+      </button>
+      <ng-template #backBox>
+        <button mat-button color="primary" (click)="events = null">
+          Volver
+        </button>
+      </ng-template>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content *ngIf="!events; else eventsBox">
+    <div mat-dialog-content class="container text-center">
+      <form [formGroup]="editClientForm">
+        <div class="row">
+          <div class="col">
+            <label for="name" class="form-label">Nombre</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="name"
+              placeholder="Nombre"
+            />
+          </div>
+          <div class="col">
+            <label for="lastName" class="form-label">Apellido</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="lastName"
+              id="lastName"
+              placeholder="Apellido"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="name" class="form-label">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="col">
+            <label for="lastName" class="form-label">Teléfono</label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="phone"
+              id="phone"
+              placeholder="Teléfono"
+            />
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <mat-form-field for="note" class="form-label">
+            <mat-label>Nota</mat-label>
+            <textarea
+              class="form-control"
+              id="note"
+              formControlName="notes"
+              matInput
+              placeholder="Comentario"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="d-flex justify-content-around" *ngIf="!events">
+    <button mat-button color="accent" (click)="editData()">EDITAR</button>
+    <button mat-button mat-dialog-close color="warn">CERRAR</button>
+  </mat-card-actions>
+</mat-card>
+<ng-template #eventsBox>
+  <div mat-dialog-content class="container text-center">
+    <div class="row" *ngFor="let event of events">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>{{event.title}}</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            [value]="event.start"
+            readonly
+          />
+
+          <mat-datepicker-toggle matIconSuffix [for]="picker">
+          </mat-datepicker-toggle>
+          <mat-datepicker disabled #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</ng-template>

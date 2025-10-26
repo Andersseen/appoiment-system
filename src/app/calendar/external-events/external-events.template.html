@@ -1,0 +1,23 @@
+<div
+  style="height: 100%"
+  mwlDroppable
+  (drop)="externalDrop($event.dropData.event)"
+  dragOverClass="drag-over"
+>
+  <div class="card-body">
+    <p *ngIf="!externalEvents.length"><em>No hay citas para mover</em></p>
+    <div class="d-flex flex-column">
+      <button
+        *ngFor="let event of externalEvents"
+        mwlDraggable
+        [dropData]="{ event: event }"
+        [touchStartLongPress]="{ delay: 300, delta: 30 }"
+        dragActiveClass="drag-active"
+        mat-button
+        [style.color]="event.color.primary"
+      >
+        {{ event.title }}
+      </button>
+    </div>
+  </div>
+</div>

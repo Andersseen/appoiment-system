@@ -1,0 +1,37 @@
+{
+  "asar": true,
+  "directories": {
+    "output": "release/"
+  },
+  "files": [
+    "**/*",
+    "!**/*.ts",
+    "!*.map",
+    "!package.json",
+    "!package-lock.json",
+    {
+      "from": "../dist/src",
+      "filter": ["**/*"]
+    },
+    {
+      "from": "../dist/app",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "icon": "dist/src/assets/icons",
+    "target": ["portable"]
+  },
+  "portable": {
+    "splashImage": "dist/src/assets/icons/electron.bmp"
+  },
+  "mac": {
+    "icon": "dist/src/assets/icons",
+    "target": ["dmg"]
+  },
+  "linux": {
+    "icon": "dist/src/assets/icons",
+    "target": ["AppImage"]
+  },
+  "extraResources": ["prisma/dev.db"]
+}

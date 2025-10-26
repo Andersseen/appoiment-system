@@ -1,0 +1,110 @@
+<h1 mat-dialog-title>Añadir cita en el {{titleDate}}</h1>
+
+<div mat-dialog-content class="container text-center">
+  <div class="row mt-3">
+    <mat-button-toggle-group class="col toggle-color" name="fontStyle">
+      <mat-button-toggle
+        *ngFor="let item of colors"
+        [ngClass]="{'selected-color' : item.selected}"
+        [ngClass]="{'hidden-color-list' : hideColors && !item.selected}"
+        [style.background-color]="item['primary']"
+        (click)="getColor(item.id)"
+        [value]="item.id"
+      >
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <form [formGroup]="eventForm">
+    <div class="row mt-3">
+      <div class="col">
+        <mat-checkbox
+          class="example-margin"
+          (change)="existeClient = $event.checked"
+        >
+          Cliente ya existe?
+        </mat-checkbox>
+      </div>
+    </div>
+    <ng-template #useClient>
+      <mat-select [formControl]="ctrl" placeholder="elige cliente">
+        <mat-option>
+          <ngx-mat-select-search [formControl]="search"></ngx-mat-select-search>
+        </mat-option>
+        <mat-option *ngFor="let client of filtered | async" [value]="client">
+          {{client.name}} {{client.lastName}}
+        </mat-option>
+      </mat-select>
+    </ng-template>
+    <ng-container *ngIf="!existeClient; else useClient">
+      <div class="row">
+        <div class="col">
+          <label for="name" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            formControlName="name"
+            placeholder="Nombre"
+          />
+        </div>
+        <div class="col">
+          <label for="lastName" class="form-label">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="lastName"
+            id="lastName"
+            placeholder="Apellido"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="tel" class="form-label">Numero movil</label>
+          <input
+            type="text"
+            class="form-control"
+            id="tel"
+            placeholder="Numero movil"
+            formControlName="phone"
+          />
+        </div>
+        <div class="col">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="name@example.com"
+            formControlName="email"
+          />
+        </div>
+      </div>
+    </ng-container>
+    <div class="row mt-3">
+      <mat-form-field for="note" class="form-label">
+        <mat-label>Nota</mat-label>
+        <textarea
+          class="form-control"
+          id="note"
+          formControlName="note"
+          matInput
+          placeholder="Comentario"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+
+<div mat-dialog-actions class="d-flex justify-content-between">
+  <button mat-button mat-dialog-close>Cerrar</button>
+
+  <button
+    mat-button
+    mat-dialog-close
+    (click)="submitForm()"
+    [disabled]="eventForm.get('color').invalid"
+  >
+    Aceptar
+  </button>
+</div>

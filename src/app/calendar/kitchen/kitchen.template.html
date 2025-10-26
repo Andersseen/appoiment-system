@@ -1,0 +1,90 @@
+<div class="table-responsive">
+  <button mat-stroked-button color="primary" (click)="addColor()">
+    Añadir color
+  </button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th *ngIf="editColor">Color de borde</th>
+        <th>Color de fondo</th>
+        <th *ngIf="editColor">Color de texto</th>
+
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of colors$ | async">
+        <td>{{item.name}}</td>
+        <td
+          *ngIf="!item.edit; else editBox"
+          [style.backgroundColor]="item['primary']"
+        ></td>
+        <ng-template #editBox>
+          <td>
+            <input type="color" [(ngModel)]="item['primary']" />
+          </td>
+
+          <td>
+            <input type="color" [(ngModel)]="item['secondary']" />
+          </td>
+          <td>
+            <input
+              type="color"
+              [ngModel]="item['secondaryText']  ?? '#000000'"
+              (ngModelChange)="item['secondaryText']  = $event"
+            />
+          </td>
+        </ng-template>
+        <td class="d-flex gap-2">
+          <button
+            *ngIf="!item.edit; else editBtn"
+            mat-raised-button
+            color="accent"
+            (click)="item.edit = true; editColor= true"
+          >
+            Editar
+          </button>
+          <ng-template #editBtn>
+            <button
+              mat-raised-button
+              (click)="item.edit = false;editColor = false"
+            >
+              Volver
+            </button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="updateColor(item)"
+            >
+              Aceptar
+            </button>
+          </ng-template>
+          <button mat-raised-button color="warn" (click)="removeColor(item)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+      <tr *ngIf="isNewColor" [formGroup]="colorForm">
+        <td><input type="text" formControlName="name" /></td>
+        <td>
+          <input type="color" formControlName="primary" />
+        </td>
+
+        <td>
+          <input type="color" formControlName="secondary" />
+        </td>
+        <td>
+          <input type="color" formControlName="secondaryText" />
+        </td>
+        <td>
+          <button class="btn btn-success" (click)="acceptNewColor()">
+            Aceptar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

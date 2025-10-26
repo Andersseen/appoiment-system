@@ -1,0 +1,86 @@
+<div [ngSwitch]="view" class="mb-3">
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [excludeDays]="excludeDays"
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="locale"
+    [refresh]="refresh"
+    [weekStartsOn]="weekStartsOn"
+    [weekendDays]="weekendDays"
+    (dayClicked)="dayClicked($event)"
+  >
+  </mwl-calendar-month-view>
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer class="week-sidenav-drawer" mode="side" position="end">
+      <app-external-events
+        [(externalEvents)]="externalEvents"
+        [(events)]="events"
+      >
+      </app-external-events>
+    </mat-drawer>
+    <mat-drawer-content class="week-sidenav-content">
+      <div class="d-flex justify-content-end">
+        <button
+          type="button"
+          mat-button
+          (click)="drawer.toggle(); inWeekMoveEvent(drawer.opened)"
+          *ngIf="view === 'week'"
+        >
+          Mover cita
+        </button>
+      </div>
+      <mwl-calendar-week-view
+        *ngSwitchCase="'week'"
+        [viewDate]="viewDate"
+        [excludeDays]="excludeDays"
+        [events]="events"
+        [locale]="locale"
+        [hourDuration]="15"
+        [hourSegments]="1"
+        [dayStartHour]="10"
+        [dayEndHour]="19"
+        [refresh]="refresh"
+        [weekStartsOn]="weekStartsOn"
+        [weekendDays]="weekendDays"
+        (eventClicked)="eventClicked($event)"
+        (dayHeaderClicked)="drawer.opened ? '' : dayClicked($event)"
+        [snapDraggedEvents]="false"
+        (eventTimesChanged)="eventDropped($event)"
+      >
+      </mwl-calendar-week-view>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+  <app-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [users]="users$ | async"
+    [hourSegments]="4"
+    [hourDuration]="60"
+    [dayStartHour]="10"
+    [dayEndHour]="19"
+    [refresh]="refresh"
+    (userChanged)="userChanged($event)"
+    (eventClicked)="eventClicked($event)"
+    (eventTimesChanged)="eventTimesChanged($event)"
+  >
+  </app-day-view>
+</div>
+<!-- <mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Edición de colores</mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-kitchen-name [refresh]="refresh"></app-kitchen-name>
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-accordion>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Edición de secciones </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-edit-sections></app-edit-sections>
+  </mat-expansion-panel>
+</mat-accordion> -->

@@ -1,0 +1,12 @@
+.cal-day-column:nth-last-child(2) {
+  flex: 1.5;
+}
+.cal-day-column:last-child {
+  flex: 0.5;
+}
+.cal-header:nth-last-child(2) {
+  flex: 1.5;
+}
+.cal-header:last-child {
+  flex: 0.5;
+}
