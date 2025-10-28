@@ -1,12 +1,9 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/server/database/generated/client" //release
-  // output   = "../dist/app/server/database/generated/client" //local
+   output   = "../app/server/database/generated/client" //release
+  //output   = "../dist/app/server/database/generated/client" //local
   engineType = "library"
-  binaryTargets = ["native", "windows"]
+   binaryTargets = ["native", "windows", "darwin-arm64"]
   // output = "../release/app/node_modules/@prisma/client"
 }
 

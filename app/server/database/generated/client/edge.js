@@ -32,11 +32,11 @@ exports.$Enums = {}
 
 /**
  * Prisma Client JS version: 5.7.1
- * Query Engine version: 4c784e32044a8a016d99474bd02a3b6123742169
+ * Query Engine version: 0ca5ccbcfa6bdc81c003cf549abe4269f59c41e5
  */
 Prisma.prismaVersion = {
   client: "5.7.1",
-  engine: "4c784e32044a8a016d99474bd02a3b6123742169"
+  engine: "0ca5ccbcfa6bdc81c003cf549abe4269f59c41e5"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -150,7 +150,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\andri\\Andersseen\\Web\\Work\\Paloma\\appoiment-system\\app\\server\\database\\generated\\client",
+      "value": "/Users/andrii/Andersseen/FP/appoiment-system/app/server/database/generated/client",
       "fromEnvVar": null
     },
     "config": {
@@ -159,16 +159,19 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "darwin-arm64",
         "native": true
       },
       {
         "fromEnvVar": null,
         "value": "windows"
+      },
+      {
+        "fromEnvVar": null,
+        "value": "darwin-arm64"
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\andri\\Andersseen\\Web\\Work\\Paloma\\appoiment-system\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -177,7 +180,7 @@ const config = {
   },
   "relativePath": "../../../../../prisma",
   "clientVersion": "5.7.1",
-  "engineVersion": "4c784e32044a8a016d99474bd02a3b6123742169",
+  "engineVersion": "0ca5ccbcfa6bdc81c003cf549abe4269f59c41e5",
   "datasourceNames": [
     "db"
   ],
@@ -191,8 +194,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwNCi8vIGxlYXJuIG1vcmUgYWJvdXQgaXQgaW4gdGhlIGRvY3M6IGh0dHBzOi8vcHJpcy5seS9kL3ByaXNtYS1zY2hlbWENCg0KZ2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogIG91dHB1dCAgID0gIi4uL2FwcC9zZXJ2ZXIvZGF0YWJhc2UvZ2VuZXJhdGVkL2NsaWVudCIgLy9yZWxlYXNlDQogIC8vIG91dHB1dCAgID0gIi4uL2Rpc3QvYXBwL3NlcnZlci9kYXRhYmFzZS9nZW5lcmF0ZWQvY2xpZW50IiAvL2xvY2FsDQogIGVuZ2luZVR5cGUgPSAibGlicmFyeSINCiAgYmluYXJ5VGFyZ2V0cyA9IFsibmF0aXZlIiwgIndpbmRvd3MiXQ0KICAvLyBvdXRwdXQgPSAiLi4vcmVsZWFzZS9hcHAvbm9kZV9tb2R1bGVzL0BwcmlzbWEvY2xpZW50Ig0KfQ0KDQoNCmRhdGFzb3VyY2UgZGIgew0KICBwcm92aWRlciA9ICJzcWxpdGUiDQogIC8vIHVybCAgICAgID0gZW52KCJEQVRBQkFTRV9VUkwiKQ0KICB1cmwgICAgICA9ICJmaWxlOmRldi5kYiINCn0NCg0KDQptb2RlbCBDb2xvciB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIG5hbWUgICAgICAgICAgIFN0cmluZw0KICBwcmltYXJ5ICAgICAgICBTdHJpbmcNCiAgc2Vjb25kYXJ5ICAgICAgU3RyaW5nDQogIHNlY29uZGFyeVRleHQgIFN0cmluZz8NCiAgZXZlbnRzICAgICAgICAgRXZlbnRbXQ0KfQ0KbW9kZWwgU2VjdGlvbiB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIG5hbWUgICAgICAgICAgIFN0cmluZw0KICBvcmRlciAgICAgICAgICBJbnQ/DQogIGV2ZW50cyAgICAgICAgIEV2ZW50W10NCn0NCm1vZGVsIENsaWVudCB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIG5hbWUgICAgICAgICAgIFN0cmluZw0KICBsYXN0TmFtZSAgICAgICBTdHJpbmcNCiAgZW1haWwgICAgICAgICAgU3RyaW5nPw0KICBwaG9uZSAgICAgICAgICBTdHJpbmc/DQogIG5vdGVzICAgICAgICAgIFN0cmluZz8NCiAgZXZlbnRzICAgICAgICAgRXZlbnRbXQ0KfQ0KbW9kZWwgRXZlbnQgew0KICBpZCAgICAgICAgICAgICBJbnQgICAgICBAaWQgQGRlZmF1bHQoYXV0b2luY3JlbWVudCgpKQ0KICB0aXRsZSAgICAgICAgICBTdHJpbmcNCiAgc3RhcnQgICAgICAgICAgRGF0ZVRpbWUNCiAgZW5kICAgICAgICAgICAgRGF0ZVRpbWU/DQogIGNvbG9yICAgICAgICAgIENvbG9yICAgIEByZWxhdGlvbihmaWVsZHM6IFtjb2xvcklkXSwgcmVmZXJlbmNlczogW2lkXSkNCiAgY29sb3JJZCAgICAgICAgSW50DQogIHNlY3Rpb24gICAgICAgIFNlY3Rpb24gIEByZWxhdGlvbihmaWVsZHM6IFtzZWN0aW9uSWRdLCByZWZlcmVuY2VzOiBbaWRdKQ0KICBzZWN0aW9uSWQgICAgICBJbnQNCiAgY2xpZW50ICAgICAgICAgQ2xpZW50ICAgQHJlbGF0aW9uKGZpZWxkczogW2NsaWVudElkXSwgcmVmZXJlbmNlczogW2lkXSkNCiAgY2xpZW50SWQgICAgICAgSW50DQogIG5vdGVzICAgICAgICAgIFN0cmluZz8NCiAgZHJhZ2dhYmxlICAgICAgQm9vbGVhbg0KICBiZWZvcmVTdGFydCAgICBCb29sZWFuDQogIGFmdGVyRW5kICAgICAgIEJvb2xlYW4NCiAgc3RhcnRlZCAgICAgICAgQm9vbGVhbj8NCg0KfQ0K",
-  "inlineSchemaHash": "8da3fa0ceb1cbbd4903545863b1e589c39421ce1469660543024e8471747df1d",
+  "inlineSchema": "Z2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogICBvdXRwdXQgICA9ICIuLi9hcHAvc2VydmVyL2RhdGFiYXNlL2dlbmVyYXRlZC9jbGllbnQiIC8vcmVsZWFzZQ0KICAvL291dHB1dCAgID0gIi4uL2Rpc3QvYXBwL3NlcnZlci9kYXRhYmFzZS9nZW5lcmF0ZWQvY2xpZW50IiAvL2xvY2FsDQogIGVuZ2luZVR5cGUgPSAibGlicmFyeSINCiAgIGJpbmFyeVRhcmdldHMgPSBbIm5hdGl2ZSIsICJ3aW5kb3dzIiwgImRhcndpbi1hcm02NCJdDQogIC8vIG91dHB1dCA9ICIuLi9yZWxlYXNlL2FwcC9ub2RlX21vZHVsZXMvQHByaXNtYS9jbGllbnQiDQp9DQoNCg0KZGF0YXNvdXJjZSBkYiB7DQogIHByb3ZpZGVyID0gInNxbGl0ZSINCiAgLy8gdXJsICAgICAgPSBlbnYoIkRBVEFCQVNFX1VSTCIpDQogIHVybCAgICAgID0gImZpbGU6ZGV2LmRiIg0KfQ0KDQoNCm1vZGVsIENvbG9yIHsNCiAgaWQgICAgICAgICAgICAgSW50ICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgbmFtZSAgICAgICAgICAgU3RyaW5nDQogIHByaW1hcnkgICAgICAgIFN0cmluZw0KICBzZWNvbmRhcnkgICAgICBTdHJpbmcNCiAgc2Vjb25kYXJ5VGV4dCAgU3RyaW5nPw0KICBldmVudHMgICAgICAgICBFdmVudFtdDQp9DQptb2RlbCBTZWN0aW9uIHsNCiAgaWQgICAgICAgICAgICAgSW50ICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgbmFtZSAgICAgICAgICAgU3RyaW5nDQogIG9yZGVyICAgICAgICAgIEludD8NCiAgZXZlbnRzICAgICAgICAgRXZlbnRbXQ0KfQ0KbW9kZWwgQ2xpZW50IHsNCiAgaWQgICAgICAgICAgICAgSW50ICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgbmFtZSAgICAgICAgICAgU3RyaW5nDQogIGxhc3ROYW1lICAgICAgIFN0cmluZw0KICBlbWFpbCAgICAgICAgICBTdHJpbmc/DQogIHBob25lICAgICAgICAgIFN0cmluZz8NCiAgbm90ZXMgICAgICAgICAgU3RyaW5nPw0KICBldmVudHMgICAgICAgICBFdmVudFtdDQp9DQptb2RlbCBFdmVudCB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIHRpdGxlICAgICAgICAgIFN0cmluZw0KICBzdGFydCAgICAgICAgICBEYXRlVGltZQ0KICBlbmQgICAgICAgICAgICBEYXRlVGltZT8NCiAgY29sb3IgICAgICAgICAgQ29sb3IgICAgQHJlbGF0aW9uKGZpZWxkczogW2NvbG9ySWRdLCByZWZlcmVuY2VzOiBbaWRdKQ0KICBjb2xvcklkICAgICAgICBJbnQNCiAgc2VjdGlvbiAgICAgICAgU2VjdGlvbiAgQHJlbGF0aW9uKGZpZWxkczogW3NlY3Rpb25JZF0sIHJlZmVyZW5jZXM6IFtpZF0pDQogIHNlY3Rpb25JZCAgICAgIEludA0KICBjbGllbnQgICAgICAgICBDbGllbnQgICBAcmVsYXRpb24oZmllbGRzOiBbY2xpZW50SWRdLCByZWZlcmVuY2VzOiBbaWRdKQ0KICBjbGllbnRJZCAgICAgICBJbnQNCiAgbm90ZXMgICAgICAgICAgU3RyaW5nPw0KICBkcmFnZ2FibGUgICAgICBCb29sZWFuDQogIGJlZm9yZVN0YXJ0ICAgIEJvb2xlYW4NCiAgYWZ0ZXJFbmQgICAgICAgQm9vbGVhbg0KICBzdGFydGVkICAgICAgICBCb29sZWFuPw0KDQp9DQo=",
+  "inlineSchemaHash": "bed6eb9689b773520f826d1894ec160b77c5896d5d7bfd182f0f81f9f59f31fc",
   "noEngine": false
 }
 config.dirname = '/'

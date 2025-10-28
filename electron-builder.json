@@ -33,5 +33,10 @@
     "icon": "dist/src/assets/icons",
     "target": ["AppImage"]
   },
-  "extraResources": ["prisma/dev.db"]
+  "extraResources": [
+    {
+      "from": "prisma/dev.db",
+      "to": "prisma/dev.db"
+    }
+  ]
 }

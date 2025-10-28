@@ -1,4 +1,3 @@
-
 Object.defineProperty(exports, "__esModule", { value: true });
 
 const {
@@ -22,217 +21,234 @@ const {
   defineDmmfProperty,
   Public,
   detectRuntime,
-} = require('./runtime/library')
+} = require("./runtime/library");
 
+const Prisma = {};
 
-const Prisma = {}
-
-exports.Prisma = Prisma
-exports.$Enums = {}
+exports.Prisma = Prisma;
+exports.$Enums = {};
 
 /**
  * Prisma Client JS version: 5.7.1
- * Query Engine version: 4c784e32044a8a016d99474bd02a3b6123742169
+ * Query Engine version: 0ca5ccbcfa6bdc81c003cf549abe4269f59c41e5
  */
 Prisma.prismaVersion = {
   client: "5.7.1",
-  engine: "4c784e32044a8a016d99474bd02a3b6123742169"
-}
+  engine: "0ca5ccbcfa6bdc81c003cf549abe4269f59c41e5",
+};
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
-Prisma.PrismaClientUnknownRequestError = PrismaClientUnknownRequestError
-Prisma.PrismaClientRustPanicError = PrismaClientRustPanicError
-Prisma.PrismaClientInitializationError = PrismaClientInitializationError
-Prisma.PrismaClientValidationError = PrismaClientValidationError
-Prisma.NotFoundError = NotFoundError
-Prisma.Decimal = Decimal
+Prisma.PrismaClientUnknownRequestError = PrismaClientUnknownRequestError;
+Prisma.PrismaClientRustPanicError = PrismaClientRustPanicError;
+Prisma.PrismaClientInitializationError = PrismaClientInitializationError;
+Prisma.PrismaClientValidationError = PrismaClientValidationError;
+Prisma.NotFoundError = NotFoundError;
+Prisma.Decimal = Decimal;
 
 /**
  * Re-export of sql-template-tag
  */
-Prisma.sql = sqltag
-Prisma.empty = empty
-Prisma.join = join
-Prisma.raw = raw
-Prisma.validator = Public.validator
+Prisma.sql = sqltag;
+Prisma.empty = empty;
+Prisma.join = join;
+Prisma.raw = raw;
+Prisma.validator = Public.validator;
 
 /**
-* Extensions
-*/
-Prisma.getExtensionContext = Extensions.getExtensionContext
-Prisma.defineExtension = Extensions.defineExtension
+ * Extensions
+ */
+Prisma.getExtensionContext = Extensions.getExtensionContext;
+Prisma.defineExtension = Extensions.defineExtension;
 
 /**
  * Shorthand utilities for JSON filtering
  */
-Prisma.DbNull = objectEnumValues.instances.DbNull
-Prisma.JsonNull = objectEnumValues.instances.JsonNull
-Prisma.AnyNull = objectEnumValues.instances.AnyNull
+Prisma.DbNull = objectEnumValues.instances.DbNull;
+Prisma.JsonNull = objectEnumValues.instances.JsonNull;
+Prisma.AnyNull = objectEnumValues.instances.AnyNull;
 
 Prisma.NullTypes = {
   DbNull: objectEnumValues.classes.DbNull,
   JsonNull: objectEnumValues.classes.JsonNull,
-  AnyNull: objectEnumValues.classes.AnyNull
-}
+  AnyNull: objectEnumValues.classes.AnyNull,
+};
 
-
-  const path = require('path')
+const path = require("path");
 
 /**
  * Enums
  */
 exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
-  Serializable: 'Serializable'
+  Serializable: "Serializable",
 });
 
 exports.Prisma.ColorScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  primary: 'primary',
-  secondary: 'secondary',
-  secondaryText: 'secondaryText'
+  id: "id",
+  name: "name",
+  primary: "primary",
+  secondary: "secondary",
+  secondaryText: "secondaryText",
 };
 
 exports.Prisma.SectionScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  order: 'order'
+  id: "id",
+  name: "name",
+  order: "order",
 };
 
 exports.Prisma.ClientScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  lastName: 'lastName',
-  email: 'email',
-  phone: 'phone',
-  notes: 'notes'
+  id: "id",
+  name: "name",
+  lastName: "lastName",
+  email: "email",
+  phone: "phone",
+  notes: "notes",
 };
 
 exports.Prisma.EventScalarFieldEnum = {
-  id: 'id',
-  title: 'title',
-  start: 'start',
-  end: 'end',
-  colorId: 'colorId',
-  sectionId: 'sectionId',
-  clientId: 'clientId',
-  notes: 'notes',
-  draggable: 'draggable',
-  beforeStart: 'beforeStart',
-  afterEnd: 'afterEnd',
-  started: 'started'
+  id: "id",
+  title: "title",
+  start: "start",
+  end: "end",
+  colorId: "colorId",
+  sectionId: "sectionId",
+  clientId: "clientId",
+  notes: "notes",
+  draggable: "draggable",
+  beforeStart: "beforeStart",
+  afterEnd: "afterEnd",
+  started: "started",
 };
 
 exports.Prisma.SortOrder = {
-  asc: 'asc',
-  desc: 'desc'
+  asc: "asc",
+  desc: "desc",
 };
 
 exports.Prisma.NullsOrder = {
-  first: 'first',
-  last: 'last'
+  first: "first",
+  last: "last",
 };
 
-
 exports.Prisma.ModelName = {
-  Color: 'Color',
-  Section: 'Section',
-  Client: 'Client',
-  Event: 'Event'
+  Color: "Color",
+  Section: "Section",
+  Client: "Client",
+  Event: "Event",
 };
 /**
  * Create the Client
  */
 const config = {
-  "generator": {
-    "name": "client",
-    "provider": {
-      "fromEnvVar": null,
-      "value": "prisma-client-js"
+  generator: {
+    name: "client",
+    provider: {
+      fromEnvVar: null,
+      value: "prisma-client-js",
     },
-    "output": {
-      "value": "C:\\Users\\andri\\Andersseen\\Web\\Work\\Paloma\\appoiment-system\\app\\server\\database\\generated\\client",
-      "fromEnvVar": null
+    output: {
+      value:
+        "/Users/andrii/Andersseen/FP/appoiment-system/app/server/database/generated/client",
+      fromEnvVar: null,
     },
-    "config": {
-      "engineType": "library"
+    config: {
+      engineType: "library",
     },
-    "binaryTargets": [
+    binaryTargets: [
       {
-        "fromEnvVar": null,
-        "value": "windows",
-        "native": true
+        fromEnvVar: null,
+        value: "darwin-arm64",
+        native: true,
       },
       {
-        "fromEnvVar": null,
-        "value": "windows"
-      }
+        fromEnvVar: null,
+        value: "windows",
+      },
+      {
+        fromEnvVar: null,
+        value: "darwin-arm64",
+      },
     ],
-    "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\andri\\Andersseen\\Web\\Work\\Paloma\\appoiment-system\\prisma\\schema.prisma",
-    "isCustomOutput": true
+    previewFeatures: [],
+    isCustomOutput: true,
   },
-  "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../../../.env"
+  relativeEnvPaths: {
+    rootEnvPath: null,
+    schemaEnvPath: "../../../../../.env",
   },
-  "relativePath": "../../../../../prisma",
-  "clientVersion": "5.7.1",
-  "engineVersion": "4c784e32044a8a016d99474bd02a3b6123742169",
-  "datasourceNames": [
-    "db"
-  ],
-  "activeProvider": "sqlite",
-  "postinstall": false,
-  "inlineDatasources": {
-    "db": {
-      "url": {
-        "fromEnvVar": null,
-        "value": "file:dev.db"
-      }
-    }
+  relativePath: "../../../../../prisma",
+  clientVersion: "5.7.1",
+  engineVersion: "0ca5ccbcfa6bdc81c003cf549abe4269f59c41e5",
+  datasourceNames: ["db"],
+  activeProvider: "sqlite",
+  postinstall: false,
+  inlineDatasources: {
+    db: {
+      url: {
+        fromEnvVar: null,
+        value: "file:dev.db",
+      },
+    },
   },
-  "inlineSchema": "Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwNCi8vIGxlYXJuIG1vcmUgYWJvdXQgaXQgaW4gdGhlIGRvY3M6IGh0dHBzOi8vcHJpcy5seS9kL3ByaXNtYS1zY2hlbWENCg0KZ2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogIG91dHB1dCAgID0gIi4uL2FwcC9zZXJ2ZXIvZGF0YWJhc2UvZ2VuZXJhdGVkL2NsaWVudCIgLy9yZWxlYXNlDQogIC8vIG91dHB1dCAgID0gIi4uL2Rpc3QvYXBwL3NlcnZlci9kYXRhYmFzZS9nZW5lcmF0ZWQvY2xpZW50IiAvL2xvY2FsDQogIGVuZ2luZVR5cGUgPSAibGlicmFyeSINCiAgYmluYXJ5VGFyZ2V0cyA9IFsibmF0aXZlIiwgIndpbmRvd3MiXQ0KICAvLyBvdXRwdXQgPSAiLi4vcmVsZWFzZS9hcHAvbm9kZV9tb2R1bGVzL0BwcmlzbWEvY2xpZW50Ig0KfQ0KDQoNCmRhdGFzb3VyY2UgZGIgew0KICBwcm92aWRlciA9ICJzcWxpdGUiDQogIC8vIHVybCAgICAgID0gZW52KCJEQVRBQkFTRV9VUkwiKQ0KICB1cmwgICAgICA9ICJmaWxlOmRldi5kYiINCn0NCg0KDQptb2RlbCBDb2xvciB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIG5hbWUgICAgICAgICAgIFN0cmluZw0KICBwcmltYXJ5ICAgICAgICBTdHJpbmcNCiAgc2Vjb25kYXJ5ICAgICAgU3RyaW5nDQogIHNlY29uZGFyeVRleHQgIFN0cmluZz8NCiAgZXZlbnRzICAgICAgICAgRXZlbnRbXQ0KfQ0KbW9kZWwgU2VjdGlvbiB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIG5hbWUgICAgICAgICAgIFN0cmluZw0KICBvcmRlciAgICAgICAgICBJbnQ/DQogIGV2ZW50cyAgICAgICAgIEV2ZW50W10NCn0NCm1vZGVsIENsaWVudCB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIG5hbWUgICAgICAgICAgIFN0cmluZw0KICBsYXN0TmFtZSAgICAgICBTdHJpbmcNCiAgZW1haWwgICAgICAgICAgU3RyaW5nPw0KICBwaG9uZSAgICAgICAgICBTdHJpbmc/DQogIG5vdGVzICAgICAgICAgIFN0cmluZz8NCiAgZXZlbnRzICAgICAgICAgRXZlbnRbXQ0KfQ0KbW9kZWwgRXZlbnQgew0KICBpZCAgICAgICAgICAgICBJbnQgICAgICBAaWQgQGRlZmF1bHQoYXV0b2luY3JlbWVudCgpKQ0KICB0aXRsZSAgICAgICAgICBTdHJpbmcNCiAgc3RhcnQgICAgICAgICAgRGF0ZVRpbWUNCiAgZW5kICAgICAgICAgICAgRGF0ZVRpbWU/DQogIGNvbG9yICAgICAgICAgIENvbG9yICAgIEByZWxhdGlvbihmaWVsZHM6IFtjb2xvcklkXSwgcmVmZXJlbmNlczogW2lkXSkNCiAgY29sb3JJZCAgICAgICAgSW50DQogIHNlY3Rpb24gICAgICAgIFNlY3Rpb24gIEByZWxhdGlvbihmaWVsZHM6IFtzZWN0aW9uSWRdLCByZWZlcmVuY2VzOiBbaWRdKQ0KICBzZWN0aW9uSWQgICAgICBJbnQNCiAgY2xpZW50ICAgICAgICAgQ2xpZW50ICAgQHJlbGF0aW9uKGZpZWxkczogW2NsaWVudElkXSwgcmVmZXJlbmNlczogW2lkXSkNCiAgY2xpZW50SWQgICAgICAgSW50DQogIG5vdGVzICAgICAgICAgIFN0cmluZz8NCiAgZHJhZ2dhYmxlICAgICAgQm9vbGVhbg0KICBiZWZvcmVTdGFydCAgICBCb29sZWFuDQogIGFmdGVyRW5kICAgICAgIEJvb2xlYW4NCiAgc3RhcnRlZCAgICAgICAgQm9vbGVhbj8NCg0KfQ0K",
-  "inlineSchemaHash": "8da3fa0ceb1cbbd4903545863b1e589c39421ce1469660543024e8471747df1d",
-  "noEngine": false
-}
+  inlineSchema:
+    "Z2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogICBvdXRwdXQgICA9ICIuLi9hcHAvc2VydmVyL2RhdGFiYXNlL2dlbmVyYXRlZC9jbGllbnQiIC8vcmVsZWFzZQ0KICAvL291dHB1dCAgID0gIi4uL2Rpc3QvYXBwL3NlcnZlci9kYXRhYmFzZS9nZW5lcmF0ZWQvY2xpZW50IiAvL2xvY2FsDQogIGVuZ2luZVR5cGUgPSAibGlicmFyeSINCiAgIGJpbmFyeVRhcmdldHMgPSBbIm5hdGl2ZSIsICJ3aW5kb3dzIiwgImRhcndpbi1hcm02NCJdDQogIC8vIG91dHB1dCA9ICIuLi9yZWxlYXNlL2FwcC9ub2RlX21vZHVsZXMvQHByaXNtYS9jbGllbnQiDQp9DQoNCg0KZGF0YXNvdXJjZSBkYiB7DQogIHByb3ZpZGVyID0gInNxbGl0ZSINCiAgLy8gdXJsICAgICAgPSBlbnYoIkRBVEFCQVNFX1VSTCIpDQogIHVybCAgICAgID0gImZpbGU6ZGV2LmRiIg0KfQ0KDQoNCm1vZGVsIENvbG9yIHsNCiAgaWQgICAgICAgICAgICAgSW50ICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgbmFtZSAgICAgICAgICAgU3RyaW5nDQogIHByaW1hcnkgICAgICAgIFN0cmluZw0KICBzZWNvbmRhcnkgICAgICBTdHJpbmcNCiAgc2Vjb25kYXJ5VGV4dCAgU3RyaW5nPw0KICBldmVudHMgICAgICAgICBFdmVudFtdDQp9DQptb2RlbCBTZWN0aW9uIHsNCiAgaWQgICAgICAgICAgICAgSW50ICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgbmFtZSAgICAgICAgICAgU3RyaW5nDQogIG9yZGVyICAgICAgICAgIEludD8NCiAgZXZlbnRzICAgICAgICAgRXZlbnRbXQ0KfQ0KbW9kZWwgQ2xpZW50IHsNCiAgaWQgICAgICAgICAgICAgSW50ICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgbmFtZSAgICAgICAgICAgU3RyaW5nDQogIGxhc3ROYW1lICAgICAgIFN0cmluZw0KICBlbWFpbCAgICAgICAgICBTdHJpbmc/DQogIHBob25lICAgICAgICAgIFN0cmluZz8NCiAgbm90ZXMgICAgICAgICAgU3RyaW5nPw0KICBldmVudHMgICAgICAgICBFdmVudFtdDQp9DQptb2RlbCBFdmVudCB7DQogIGlkICAgICAgICAgICAgIEludCAgICAgIEBpZCBAZGVmYXVsdChhdXRvaW5jcmVtZW50KCkpDQogIHRpdGxlICAgICAgICAgIFN0cmluZw0KICBzdGFydCAgICAgICAgICBEYXRlVGltZQ0KICBlbmQgICAgICAgICAgICBEYXRlVGltZT8NCiAgY29sb3IgICAgICAgICAgQ29sb3IgICAgQHJlbGF0aW9uKGZpZWxkczogW2NvbG9ySWRdLCByZWZlcmVuY2VzOiBbaWRdKQ0KICBjb2xvcklkICAgICAgICBJbnQNCiAgc2VjdGlvbiAgICAgICAgU2VjdGlvbiAgQHJlbGF0aW9uKGZpZWxkczogW3NlY3Rpb25JZF0sIHJlZmVyZW5jZXM6IFtpZF0pDQogIHNlY3Rpb25JZCAgICAgIEludA0KICBjbGllbnQgICAgICAgICBDbGllbnQgICBAcmVsYXRpb24oZmllbGRzOiBbY2xpZW50SWRdLCByZWZlcmVuY2VzOiBbaWRdKQ0KICBjbGllbnRJZCAgICAgICBJbnQNCiAgbm90ZXMgICAgICAgICAgU3RyaW5nPw0KICBkcmFnZ2FibGUgICAgICBCb29sZWFuDQogIGJlZm9yZVN0YXJ0ICAgIEJvb2xlYW4NCiAgYWZ0ZXJFbmQgICAgICAgQm9vbGVhbg0KICBzdGFydGVkICAgICAgICBCb29sZWFuPw0KDQp9DQo=",
+  inlineSchemaHash:
+    "bed6eb9689b773520f826d1894ec160b77c5896d5d7bfd182f0f81f9f59f31fc",
+  noEngine: false,
+};
 
-const fs = require('fs')
+const fs = require("fs");
 
-config.dirname = __dirname
-if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
+config.dirname = __dirname;
+if (!fs.existsSync(path.join(__dirname, "schema.prisma"))) {
   const alternativePaths = [
     "app/server/database/generated/client",
     "server/database/generated/client",
-  ]
-  
-  const alternativePath = alternativePaths.find((altPath) => {
-    return fs.existsSync(path.join(process.cwd(), altPath, 'schema.prisma'))
-  }) ?? alternativePaths[0]
+  ];
 
-  config.dirname = path.join(process.cwd(), alternativePath)
-  config.isBundled = true
+  const alternativePath =
+    alternativePaths.find((altPath) => {
+      return fs.existsSync(path.join(process.cwd(), altPath, "schema.prisma"));
+    }) ?? alternativePaths[0];
+
+  config.dirname = path.join(process.cwd(), alternativePath);
+  config.isBundled = true;
 }
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"Color\":{\"dbName\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"name\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"primary\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"secondary\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"secondaryText\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"events\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Event\",\"relationName\":\"ColorToEvent\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"Section\":{\"dbName\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"name\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"order\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"events\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Event\",\"relationName\":\"EventToSection\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"Client\":{\"dbName\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"name\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"lastName\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"email\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"phone\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"notes\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"events\",\"kind\":\"object\",\"isList\":true,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Event\",\"relationName\":\"ClientToEvent\",\"relationFromFields\":[],\"relationToFields\":[],\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false},\"Event\":{\"dbName\":null,\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":true,\"isReadOnly\":false,\"hasDefaultValue\":true,\"type\":\"Int\",\"default\":{\"name\":\"autoincrement\",\"args\":[]},\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"title\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"start\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"DateTime\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"end\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"DateTime\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"color\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Color\",\"relationName\":\"ColorToEvent\",\"relationFromFields\":[\"colorId\"],\"relationToFields\":[\"id\"],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"colorId\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"section\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Section\",\"relationName\":\"EventToSection\",\"relationFromFields\":[\"sectionId\"],\"relationToFields\":[\"id\"],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"sectionId\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"client\",\"kind\":\"object\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Client\",\"relationName\":\"ClientToEvent\",\"relationFromFields\":[\"clientId\"],\"relationToFields\":[\"id\"],\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"clientId\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":true,\"hasDefaultValue\":false,\"type\":\"Int\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"notes\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"String\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"draggable\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Boolean\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"beforeStart\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Boolean\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"afterEnd\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":true,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Boolean\",\"isGenerated\":false,\"isUpdatedAt\":false},{\"name\":\"started\",\"kind\":\"scalar\",\"isList\":false,\"isRequired\":false,\"isUnique\":false,\"isId\":false,\"isReadOnly\":false,\"hasDefaultValue\":false,\"type\":\"Boolean\",\"isGenerated\":false,\"isUpdatedAt\":false}],\"primaryKey\":null,\"uniqueFields\":[],\"uniqueIndexes\":[],\"isGenerated\":false}},\"enums\":{},\"types\":{}}")
-defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
-config.getQueryEngineWasmModule = undefined
+config.runtimeDataModel = JSON.parse(
+  '{"models":{"Color":{"dbName":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"Int","default":{"name":"autoincrement","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"name","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"primary","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"secondary","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"secondaryText","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"events","kind":"object","isList":true,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Event","relationName":"ColorToEvent","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Section":{"dbName":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"Int","default":{"name":"autoincrement","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"name","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"order","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Int","isGenerated":false,"isUpdatedAt":false},{"name":"events","kind":"object","isList":true,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Event","relationName":"EventToSection","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Client":{"dbName":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"Int","default":{"name":"autoincrement","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"name","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"lastName","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"email","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"phone","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"notes","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"events","kind":"object","isList":true,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Event","relationName":"ClientToEvent","relationFromFields":[],"relationToFields":[],"isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false},"Event":{"dbName":null,"fields":[{"name":"id","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":true,"isReadOnly":false,"hasDefaultValue":true,"type":"Int","default":{"name":"autoincrement","args":[]},"isGenerated":false,"isUpdatedAt":false},{"name":"title","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"start","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","isGenerated":false,"isUpdatedAt":false},{"name":"end","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"DateTime","isGenerated":false,"isUpdatedAt":false},{"name":"color","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Color","relationName":"ColorToEvent","relationFromFields":["colorId"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"colorId","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"Int","isGenerated":false,"isUpdatedAt":false},{"name":"section","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Section","relationName":"EventToSection","relationFromFields":["sectionId"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"sectionId","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"Int","isGenerated":false,"isUpdatedAt":false},{"name":"client","kind":"object","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Client","relationName":"ClientToEvent","relationFromFields":["clientId"],"relationToFields":["id"],"isGenerated":false,"isUpdatedAt":false},{"name":"clientId","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":true,"hasDefaultValue":false,"type":"Int","isGenerated":false,"isUpdatedAt":false},{"name":"notes","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"String","isGenerated":false,"isUpdatedAt":false},{"name":"draggable","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Boolean","isGenerated":false,"isUpdatedAt":false},{"name":"beforeStart","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Boolean","isGenerated":false,"isUpdatedAt":false},{"name":"afterEnd","kind":"scalar","isList":false,"isRequired":true,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Boolean","isGenerated":false,"isUpdatedAt":false},{"name":"started","kind":"scalar","isList":false,"isRequired":false,"isUnique":false,"isId":false,"isReadOnly":false,"hasDefaultValue":false,"type":"Boolean","isGenerated":false,"isUpdatedAt":false}],"primaryKey":null,"uniqueFields":[],"uniqueIndexes":[],"isGenerated":false}},"enums":{},"types":{}}'
+);
+defineDmmfProperty(exports.Prisma, config.runtimeDataModel);
+config.getQueryEngineWasmModule = undefined;
 
-
-const { warnEnvConflicts } = require('./runtime/library')
+const { warnEnvConflicts } = require("./runtime/library");
 
 warnEnvConflicts({
-    rootEnvPath: config.relativeEnvPaths.rootEnvPath && path.resolve(config.dirname, config.relativeEnvPaths.rootEnvPath),
-    schemaEnvPath: config.relativeEnvPaths.schemaEnvPath && path.resolve(config.dirname, config.relativeEnvPaths.schemaEnvPath)
-})
+  rootEnvPath:
+    config.relativeEnvPaths.rootEnvPath &&
+    path.resolve(config.dirname, config.relativeEnvPaths.rootEnvPath),
+  schemaEnvPath:
+    config.relativeEnvPaths.schemaEnvPath &&
+    path.resolve(config.dirname, config.relativeEnvPaths.schemaEnvPath),
+});
 
-const PrismaClient = getPrismaClient(config)
-exports.PrismaClient = PrismaClient
-Object.assign(exports, Prisma)
+const PrismaClient = getPrismaClient(config);
+exports.PrismaClient = PrismaClient;
+Object.assign(exports, Prisma);
+
+// file annotations for bundling tools to include these files
+path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
+path.join(
+  process.cwd(),
+  "app/server/database/generated/client/libquery_engine-darwin-arm64.dylib.node"
+);
 
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
-path.join(process.cwd(), "app/server/database/generated/client/query_engine-windows.dll.node")
+path.join(
+  process.cwd(),
+  "app/server/database/generated/client/query_engine-windows.dll.node"
+);
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "app/server/database/generated/client/schema.prisma")
+path.join(process.cwd(), "app/server/database/generated/client/schema.prisma");

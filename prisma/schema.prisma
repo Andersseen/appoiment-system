@@ -1,7 +1,7 @@
 generator client {
   provider = "prisma-client-js"
-  // output   = "../app/server/database/generated/client" //release
-  output   = "../dist/app/server/database/generated/client" //local
+   output   = "../app/server/database/generated/client" //release
+  //output   = "../dist/app/server/database/generated/client" //local
   engineType = "library"
    binaryTargets = ["native", "windows", "darwin-arm64"]
   // output = "../release/app/node_modules/@prisma/client"

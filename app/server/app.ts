@@ -32,8 +32,11 @@ export class expressServer {
     this.app.use('/clients', clientRoute);
     //MARKS
     this.app.use('/marks', markRoute);
-    this.server = this.app.listen(PORT || process.env.PORT, () => {
-      console.log(`server is running on port ${PORT}`);
+
+    const port = Number(process.env.PORT || PORT || 1224);
+    const host = '0.0.0.0';
+    this.server = this.app.listen(port, host, () => {
+      console.log(`✅ Server running on http://${host}:${port}`);
     });
   }
 

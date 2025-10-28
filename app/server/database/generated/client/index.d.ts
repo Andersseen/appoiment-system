@@ -253,7 +253,7 @@ export namespace Prisma {
 
   /**
    * Prisma Client JS version: 5.7.1
-   * Query Engine version: 4c784e32044a8a016d99474bd02a3b6123742169
+   * Query Engine version: 0ca5ccbcfa6bdc81c003cf549abe4269f59c41e5
    */
   export type PrismaVersion = {
     client: string
@@ -717,10 +717,6 @@ export namespace Prisma {
             args: Prisma.ColorCreateArgs<ExtArgs>,
             result: $Utils.PayloadToResult<Prisma.$ColorPayload>
           }
-          createMany: {
-            args: Prisma.ColorCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
           delete: {
             args: Prisma.ColorDeleteArgs<ExtArgs>,
             result: $Utils.PayloadToResult<Prisma.$ColorPayload>
@@ -782,10 +778,6 @@ export namespace Prisma {
           create: {
             args: Prisma.SectionCreateArgs<ExtArgs>,
             result: $Utils.PayloadToResult<Prisma.$SectionPayload>
-          }
-          createMany: {
-            args: Prisma.SectionCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
           }
           delete: {
             args: Prisma.SectionDeleteArgs<ExtArgs>,
@@ -849,10 +841,6 @@ export namespace Prisma {
             args: Prisma.ClientCreateArgs<ExtArgs>,
             result: $Utils.PayloadToResult<Prisma.$ClientPayload>
           }
-          createMany: {
-            args: Prisma.ClientCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
-          }
           delete: {
             args: Prisma.ClientDeleteArgs<ExtArgs>,
             result: $Utils.PayloadToResult<Prisma.$ClientPayload>
@@ -914,10 +902,6 @@ export namespace Prisma {
           create: {
             args: Prisma.EventCreateArgs<ExtArgs>,
             result: $Utils.PayloadToResult<Prisma.$EventPayload>
-          }
-          createMany: {
-            args: Prisma.EventCreateManyArgs<ExtArgs>,
-            result: Prisma.BatchPayload
           }
           delete: {
             args: Prisma.EventDeleteArgs<ExtArgs>,
@@ -1547,22 +1531,6 @@ export namespace Prisma {
     ): Prisma__ColorClient<$Result.GetResult<Prisma.$ColorPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Colors.
-     *     @param {ColorCreateManyArgs} args - Arguments to create many Colors.
-     *     @example
-     *     // Create many Colors
-     *     const color = await prisma.color.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends ColorCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ColorCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
      * Delete a Color.
      * @param {ColorDeleteArgs} args - Arguments to delete one Color.
      * @example
@@ -2035,17 +2003,6 @@ export namespace Prisma {
 
 
   /**
-   * Color createMany
-   */
-  export type ColorCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Colors.
-     */
-    data: ColorCreateManyInput | ColorCreateManyInput[]
-  }
-
-
-  /**
    * Color update
    */
   export type ColorUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2503,22 +2460,6 @@ export namespace Prisma {
     create<T extends SectionCreateArgs<ExtArgs>>(
       args: SelectSubset<T, SectionCreateArgs<ExtArgs>>
     ): Prisma__SectionClient<$Result.GetResult<Prisma.$SectionPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
-
-    /**
-     * Create many Sections.
-     *     @param {SectionCreateManyArgs} args - Arguments to create many Sections.
-     *     @example
-     *     // Create many Sections
-     *     const section = await prisma.section.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends SectionCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, SectionCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
 
     /**
      * Delete a Section.
@@ -2987,17 +2928,6 @@ export namespace Prisma {
      * The data needed to create a Section.
      */
     data: XOR<SectionCreateInput, SectionUncheckedCreateInput>
-  }
-
-
-  /**
-   * Section createMany
-   */
-  export type SectionCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Sections.
-     */
-    data: SectionCreateManyInput | SectionCreateManyInput[]
   }
 
 
@@ -3487,22 +3417,6 @@ export namespace Prisma {
     ): Prisma__ClientClient<$Result.GetResult<Prisma.$ClientPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Clients.
-     *     @param {ClientCreateManyArgs} args - Arguments to create many Clients.
-     *     @example
-     *     // Create many Clients
-     *     const client = await prisma.client.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends ClientCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, ClientCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
      * Delete a Client.
      * @param {ClientDeleteArgs} args - Arguments to delete one Client.
      * @example
@@ -3972,17 +3886,6 @@ export namespace Prisma {
      * The data needed to create a Client.
      */
     data: XOR<ClientCreateInput, ClientUncheckedCreateInput>
-  }
-
-
-  /**
-   * Client createMany
-   */
-  export type ClientCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Clients.
-     */
-    data: ClientCreateManyInput | ClientCreateManyInput[]
   }
 
 
@@ -4548,22 +4451,6 @@ export namespace Prisma {
     ): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, 'create'>, never, ExtArgs>
 
     /**
-     * Create many Events.
-     *     @param {EventCreateManyArgs} args - Arguments to create many Events.
-     *     @example
-     *     // Create many Events
-     *     const event = await prisma.event.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
-     *     
-    **/
-    createMany<T extends EventCreateManyArgs<ExtArgs>>(
-      args?: SelectSubset<T, EventCreateManyArgs<ExtArgs>>
-    ): Prisma.PrismaPromise<BatchPayload>
-
-    /**
      * Delete a Event.
      * @param {EventDeleteArgs} args - Arguments to delete one Event.
      * @example
@@ -5043,17 +4930,6 @@ export namespace Prisma {
      * The data needed to create a Event.
      */
     data: XOR<EventCreateInput, EventUncheckedCreateInput>
-  }
-
-
-  /**
-   * Event createMany
-   */
-  export type EventCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * The data used to create many Events.
-     */
-    data: EventCreateManyInput | EventCreateManyInput[]
   }
 
 
@@ -5586,14 +5462,6 @@ export namespace Prisma {
     events?: EventUncheckedUpdateManyWithoutColorNestedInput
   }
 
-  export type ColorCreateManyInput = {
-    id?: number
-    name: string
-    primary: string
-    secondary: string
-    secondaryText?: string | null
-  }
-
   export type ColorUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
     primary?: StringFieldUpdateOperationsInput | string
@@ -5633,12 +5501,6 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     order?: NullableIntFieldUpdateOperationsInput | number | null
     events?: EventUncheckedUpdateManyWithoutSectionNestedInput
-  }
-
-  export type SectionCreateManyInput = {
-    id?: number
-    name: string
-    order?: number | null
   }
 
   export type SectionUpdateManyMutationInput = {
@@ -5688,15 +5550,6 @@ export namespace Prisma {
     phone?: NullableStringFieldUpdateOperationsInput | string | null
     notes?: NullableStringFieldUpdateOperationsInput | string | null
     events?: EventUncheckedUpdateManyWithoutClientNestedInput
-  }
-
-  export type ClientCreateManyInput = {
-    id?: number
-    name: string
-    lastName: string
-    email?: string | null
-    phone?: string | null
-    notes?: string | null
   }
 
   export type ClientUpdateManyMutationInput = {
@@ -5772,21 +5625,6 @@ export namespace Prisma {
     beforeStart?: BoolFieldUpdateOperationsInput | boolean
     afterEnd?: BoolFieldUpdateOperationsInput | boolean
     started?: NullableBoolFieldUpdateOperationsInput | boolean | null
-  }
-
-  export type EventCreateManyInput = {
-    id?: number
-    title: string
-    start: Date | string
-    end?: Date | string | null
-    colorId: number
-    sectionId: number
-    clientId: number
-    notes?: string | null
-    draggable: boolean
-    beforeStart: boolean
-    afterEnd: boolean
-    started?: boolean | null
   }
 
   export type EventUpdateManyMutationInput = {
@@ -6194,14 +6032,12 @@ export namespace Prisma {
   export type EventCreateNestedManyWithoutColorInput = {
     create?: XOR<EventCreateWithoutColorInput, EventUncheckedCreateWithoutColorInput> | EventCreateWithoutColorInput[] | EventUncheckedCreateWithoutColorInput[]
     connectOrCreate?: EventCreateOrConnectWithoutColorInput | EventCreateOrConnectWithoutColorInput[]
-    createMany?: EventCreateManyColorInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
   export type EventUncheckedCreateNestedManyWithoutColorInput = {
     create?: XOR<EventCreateWithoutColorInput, EventUncheckedCreateWithoutColorInput> | EventCreateWithoutColorInput[] | EventUncheckedCreateWithoutColorInput[]
     connectOrCreate?: EventCreateOrConnectWithoutColorInput | EventCreateOrConnectWithoutColorInput[]
-    createMany?: EventCreateManyColorInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
@@ -6217,7 +6053,6 @@ export namespace Prisma {
     create?: XOR<EventCreateWithoutColorInput, EventUncheckedCreateWithoutColorInput> | EventCreateWithoutColorInput[] | EventUncheckedCreateWithoutColorInput[]
     connectOrCreate?: EventCreateOrConnectWithoutColorInput | EventCreateOrConnectWithoutColorInput[]
     upsert?: EventUpsertWithWhereUniqueWithoutColorInput | EventUpsertWithWhereUniqueWithoutColorInput[]
-    createMany?: EventCreateManyColorInputEnvelope
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
@@ -6239,7 +6074,6 @@ export namespace Prisma {
     create?: XOR<EventCreateWithoutColorInput, EventUncheckedCreateWithoutColorInput> | EventCreateWithoutColorInput[] | EventUncheckedCreateWithoutColorInput[]
     connectOrCreate?: EventCreateOrConnectWithoutColorInput | EventCreateOrConnectWithoutColorInput[]
     upsert?: EventUpsertWithWhereUniqueWithoutColorInput | EventUpsertWithWhereUniqueWithoutColorInput[]
-    createMany?: EventCreateManyColorInputEnvelope
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
@@ -6252,14 +6086,12 @@ export namespace Prisma {
   export type EventCreateNestedManyWithoutSectionInput = {
     create?: XOR<EventCreateWithoutSectionInput, EventUncheckedCreateWithoutSectionInput> | EventCreateWithoutSectionInput[] | EventUncheckedCreateWithoutSectionInput[]
     connectOrCreate?: EventCreateOrConnectWithoutSectionInput | EventCreateOrConnectWithoutSectionInput[]
-    createMany?: EventCreateManySectionInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
   export type EventUncheckedCreateNestedManyWithoutSectionInput = {
     create?: XOR<EventCreateWithoutSectionInput, EventUncheckedCreateWithoutSectionInput> | EventCreateWithoutSectionInput[] | EventUncheckedCreateWithoutSectionInput[]
     connectOrCreate?: EventCreateOrConnectWithoutSectionInput | EventCreateOrConnectWithoutSectionInput[]
-    createMany?: EventCreateManySectionInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
@@ -6275,7 +6107,6 @@ export namespace Prisma {
     create?: XOR<EventCreateWithoutSectionInput, EventUncheckedCreateWithoutSectionInput> | EventCreateWithoutSectionInput[] | EventUncheckedCreateWithoutSectionInput[]
     connectOrCreate?: EventCreateOrConnectWithoutSectionInput | EventCreateOrConnectWithoutSectionInput[]
     upsert?: EventUpsertWithWhereUniqueWithoutSectionInput | EventUpsertWithWhereUniqueWithoutSectionInput[]
-    createMany?: EventCreateManySectionInputEnvelope
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
@@ -6289,7 +6120,6 @@ export namespace Prisma {
     create?: XOR<EventCreateWithoutSectionInput, EventUncheckedCreateWithoutSectionInput> | EventCreateWithoutSectionInput[] | EventUncheckedCreateWithoutSectionInput[]
     connectOrCreate?: EventCreateOrConnectWithoutSectionInput | EventCreateOrConnectWithoutSectionInput[]
     upsert?: EventUpsertWithWhereUniqueWithoutSectionInput | EventUpsertWithWhereUniqueWithoutSectionInput[]
-    createMany?: EventCreateManySectionInputEnvelope
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
@@ -6302,14 +6132,12 @@ export namespace Prisma {
   export type EventCreateNestedManyWithoutClientInput = {
     create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
     connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
   export type EventUncheckedCreateNestedManyWithoutClientInput = {
     create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
     connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
@@ -6317,7 +6145,6 @@ export namespace Prisma {
     create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
     connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
     upsert?: EventUpsertWithWhereUniqueWithoutClientInput | EventUpsertWithWhereUniqueWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
@@ -6331,7 +6158,6 @@ export namespace Prisma {
     create?: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput> | EventCreateWithoutClientInput[] | EventUncheckedCreateWithoutClientInput[]
     connectOrCreate?: EventCreateOrConnectWithoutClientInput | EventCreateOrConnectWithoutClientInput[]
     upsert?: EventUpsertWithWhereUniqueWithoutClientInput | EventUpsertWithWhereUniqueWithoutClientInput[]
-    createMany?: EventCreateManyClientInputEnvelope
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
@@ -6645,10 +6471,6 @@ export namespace Prisma {
     create: XOR<EventCreateWithoutColorInput, EventUncheckedCreateWithoutColorInput>
   }
 
-  export type EventCreateManyColorInputEnvelope = {
-    data: EventCreateManyColorInput | EventCreateManyColorInput[]
-  }
-
   export type EventUpsertWithWhereUniqueWithoutColorInput = {
     where: EventWhereUniqueInput
     update: XOR<EventUpdateWithoutColorInput, EventUncheckedUpdateWithoutColorInput>
@@ -6715,10 +6537,6 @@ export namespace Prisma {
     create: XOR<EventCreateWithoutSectionInput, EventUncheckedCreateWithoutSectionInput>
   }
 
-  export type EventCreateManySectionInputEnvelope = {
-    data: EventCreateManySectionInput | EventCreateManySectionInput[]
-  }
-
   export type EventUpsertWithWhereUniqueWithoutSectionInput = {
     where: EventWhereUniqueInput
     update: XOR<EventUpdateWithoutSectionInput, EventUncheckedUpdateWithoutSectionInput>
@@ -6765,10 +6583,6 @@ export namespace Prisma {
   export type EventCreateOrConnectWithoutClientInput = {
     where: EventWhereUniqueInput
     create: XOR<EventCreateWithoutClientInput, EventUncheckedCreateWithoutClientInput>
-  }
-
-  export type EventCreateManyClientInputEnvelope = {
-    data: EventCreateManyClientInput | EventCreateManyClientInput[]
   }
 
   export type EventUpsertWithWhereUniqueWithoutClientInput = {
@@ -6921,20 +6735,6 @@ export namespace Prisma {
     notes?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type EventCreateManyColorInput = {
-    id?: number
-    title: string
-    start: Date | string
-    end?: Date | string | null
-    sectionId: number
-    clientId: number
-    notes?: string | null
-    draggable: boolean
-    beforeStart: boolean
-    afterEnd: boolean
-    started?: boolean | null
-  }
-
   export type EventUpdateWithoutColorInput = {
     title?: StringFieldUpdateOperationsInput | string
     start?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -6976,20 +6776,6 @@ export namespace Prisma {
     started?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
-  export type EventCreateManySectionInput = {
-    id?: number
-    title: string
-    start: Date | string
-    end?: Date | string | null
-    colorId: number
-    clientId: number
-    notes?: string | null
-    draggable: boolean
-    beforeStart: boolean
-    afterEnd: boolean
-    started?: boolean | null
-  }
-
   export type EventUpdateWithoutSectionInput = {
     title?: StringFieldUpdateOperationsInput | string
     start?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -7029,20 +6815,6 @@ export namespace Prisma {
     beforeStart?: BoolFieldUpdateOperationsInput | boolean
     afterEnd?: BoolFieldUpdateOperationsInput | boolean
     started?: NullableBoolFieldUpdateOperationsInput | boolean | null
-  }
-
-  export type EventCreateManyClientInput = {
-    id?: number
-    title: string
-    start: Date | string
-    end?: Date | string | null
-    colorId: number
-    sectionId: number
-    notes?: string | null
-    draggable: boolean
-    beforeStart: boolean
-    afterEnd: boolean
-    started?: boolean | null
   }
 
   export type EventUpdateWithoutClientInput = {
